@@ -1,0 +1,36 @@
+{
+  "name": "ucode2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^1.0.2",
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.11.5",
+    "@types/serialport": "^7.0.2",
+    "@types/socket.io": "^2.1.2",
+    "canvas": "^2.4.1",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "face-api.js": "^0.18.0",
+    "helmet": "^3.16.0",
+    "nodemon": "^1.18.10",
+    "opencv4nodejs": "^4.14.1",
+    "passport": "^0.4.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.4.0",
+    "serialport": "^7.1.4",
+    "socket.io": "^2.2.0",
+    "ts-node": "^8.0.3",
+    "tslib": "^1.9.3",
+    "typedi": "^0.8.0",
+    "typescript": "^3.3.4000",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.8.0"
+  }
+}
