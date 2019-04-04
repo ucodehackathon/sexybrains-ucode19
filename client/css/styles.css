@@ -1,0 +1,203 @@
+@font-face {
+    font-family: adihaus;
+    src: url(../font/AdihausDIN-Regular.woff2);
+}
+
+@font-face {
+    font-family: adihaus;
+    src: url(../font/AdihausDIN-Bold.woff2);
+    font-weight: bold;
+}
+
+@keyframes anim-opacity {
+    0%   { opacity: 0; }
+    15%   { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes anim-right-to-left {
+    from { transform: translateX(25px) scale(1); }
+    to { transform: translateX(-25px) scale(1); }
+}
+
+@keyframes anim-right-to-left-faster {
+    from { transform: translateX(50px) scale(1); }
+    to { transform: translateX(-50px) scale(1); }
+}
+
+@keyframes anim-bottom-right {
+    from { transform: translate(50px, 50px) scale(1); }
+    to { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes anim-bottom-left {
+    from { transform: translate(-50px, 50px) scale(1); }
+    to { transform: translate(0px, 0px) scale(1); }
+}
+
+body {
+    font-family: adihaus;
+    font-size: 1rem;
+    margin: 0;
+    overflow: hidden;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    font-weight: normal;
+    line-height: 1;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3em;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.frame {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: #eceff1;
+    opacity: 1;
+    display: none;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.frame.hide {
+    opacity: 0;
+}
+
+body.has-cta .frame {
+    transform: translateY(-7em);
+}
+
+body.has-cta .frame.high-cta {
+    transform: translateY(-15em);
+}
+
+.frame .inner {
+    animation: anim-opacity 10s linear 0s infinite normal none;
+}
+
+.frame img {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    animation: anim-right-to-left 10s linear 0s infinite normal none;
+}
+
+.frame img.tall {
+    width: auto;
+    height: 100%;
+}
+
+.frame img.bottom-right {
+    animation-name: anim-bottom-right;
+}
+
+.frame img.bottom-left {
+    animation-name: anim-bottom-left;
+}
+
+.frame .text {
+    position: absolute;
+    z-index: 2;
+    animation: anim-right-to-left-faster 10s linear 0s infinite normal none;
+}
+
+.frame .text.white {
+    color: white;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cta {
+    position: absolute;
+    z-index: 10;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 3em 2em;
+    padding-top: 1em;
+    background: black;
+    color: white;
+    box-sizing: border-box;
+    transform: translateY(calc(100% + 50px));
+    transition: transform 0.5s;
+}
+
+.cta.white {
+    background: #eceff1;
+    color: black;
+}
+
+.cta.show {
+    transform: translateY(0%);
+}
+
+.cta::after {
+    content: '';
+    width: 200%;
+    height: 50px;
+    transform: rotate(4deg);
+    background: black;
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: -50%;
+    z-index: -1;
+}
+
+.cta.white::after {
+    background: #eceff1;
+}
+
+.pay {
+    color: black;
+    background: white;
+    border-radius: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin-top: 1em;
+}
+
+.pay img {
+    margin-right: 0.5em;
+}
+
+#shop-cta {
+    text-align: center;
+}
+
+.buy-success {
+    padding: 2em;
+    background: white;
+    color: black;
+    width: 100%;
+    box-sizing: border-box;
+    height: 135px;
+    position: absolute;
+    z-index: 100;
+    top: calc(50vh - 80px);
+    left: 0;
+    text-align: center;
+    transform: translateX(100%);
+    transition: transform 0.25s;
+}
+
+.buy-success.show {
+    transform: translateX(0%);
+}
